@@ -2,7 +2,7 @@ const{test,expect}=require('@playwright/test')
 
 test(" first test",async({page})=>{
      await page.goto("https://www.google.com/");
-     await page.locator("#APjFqb").fill("playwright").waitFor();
+     await page.locator(".gLFyf").fill("playwright");
      await page.waitForSelector("ul[jsname='bw4e9b'] li");
      const allcounts=await page.locator("ul[jsname='bw4e9b'] li");
      console.log("Total counts :"+await allcounts.count());
@@ -22,7 +22,7 @@ test("second test",async({browser})=>{
    await page.goto("https://www.easemytrip.com/");
    await page.locator("#rtrip").click();
    await page.locator("#frmcity").click();
-   await page.locator("#a_FromSector_show").pressSequentially("America");
+   await page.locator("#a_FromSector_show").pressSequentially("America ");
    await page.waitForSelector('div[id="fromautoFill"] ul li');
    const allOptions=page.locator('div[id="fromautoFill"] ul li');
    console.log("Total counts :"+await allOptions.count());
@@ -33,14 +33,14 @@ test("second test",async({browser})=>{
             await allOptions.nth(i).click();
             break;
    }}
-   await page.locator("#a_Editbox13_show").pressSequentially("India");
+   await page.locator("#a_Editbox13_show").pressSequentially("Delhi ");
    await page.waitForSelector('div[id="toautoFill"] ul li');
    const allOptions2=page.locator('div[id="toautoFill"] ul li');
    console.log("Total counts :"+await allOptions2.count());
    for(let i=0;i<await allOptions2.count();i++){
       const option2=((await allOptions2.nth(i).innerText())).trim();
       console.log(option2);
-        if(option2.includes("Delhi")){
+        if(option2.includes("Indira Gandhi International Airport")){
             await allOptions2.nth(i).click();
             break;
         }

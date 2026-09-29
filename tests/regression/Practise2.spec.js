@@ -53,7 +53,7 @@ test("Multi window page",async({page,context})=>{
     console.log(await page.title());
 })
 
-test.only("Multiple windows",async({page,context})=>{
+test("Multiple windows",async({page,context})=>{
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/#");
     const newpage=context.waitForEvent('page');
     await page.getByRole('link',{name:'Free Access to InterviewQues/ResumeAssistance/Material'}).click();

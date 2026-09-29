@@ -387,7 +387,7 @@ test("calendar ",async({page})=>{
   await page.waitForTimeout(5000);
 })
 
-test.only("Easy my trip calendar ",async({page})=>{
+test("Easy my trip calendar ",async({page})=>{
     await page.goto("https://www.easemytrip.com/");
     await page.locator("#rtrip").click();
     await page.locator("#frmcity").click();

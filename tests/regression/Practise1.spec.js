@@ -53,7 +53,7 @@ test("Input box and radio button", async ({ page }) => {
   const radiobutton1 = page.locator("#female");
   await expect(radiobutton1).not.toBeChecked();
 
-  await page.waitForTimeout(5000);
+ 
 
 
 
@@ -82,7 +82,7 @@ test("check box practise", async ({ page }) => {
     }
 
   }
-  await page.waitForTimeout(5000);
+  
 
 
 
@@ -92,7 +92,7 @@ test("check box practise", async ({ page }) => {
 
 test("google dropdown", async ({ page }) => {
   await page.goto("https://www.google.com/");
-  await page.locator("#APjFqb").fill("playwright ");
+  await page.locator(".gLFyf").fill("playwright ");
   await page.waitForSelector("ul[jsname='bw4e9b'] li"); 
   const totallist = page.locator("ul[jsname='bw4e9b'] li");
   console.log(await totallist.count()); 
@@ -105,7 +105,7 @@ test("google dropdown", async ({ page }) => {
      }
   }
 
-await page.waitForTimeout(5000);
+
 
 
 })
@@ -117,7 +117,7 @@ test("spice jet dropdown",async({page})=>{
     await page.locator("div[data-testid='to-testID-origin']").click();
     // await page.getByText("India").click();
     await page.locator("div[class*='css-1dbjc4n r-1awozwy r-1loqt21 r-18u37iz r-1wtj0ep']").getByText("Sri Guru Ram Dass Jee International Airport").click();
-    await page.waitForTimeout(5000);
+    
     })
 
 test("Multiselect  dropdown",async({page})=>{
@@ -137,7 +137,7 @@ test("Multiselect  dropdown",async({page})=>{
              }
        }
        
-       await page.waitForTimeout(5000);
+       
 
 
 })
@@ -172,7 +172,7 @@ test("Autosuggest1 dropdown",async({page})=>{
     }
   }
 
-   await page.waitForTimeout(2000);
+   
 })
 
 test("Hidden dropdown",async({page})=>{
@@ -193,7 +193,7 @@ test("Hidden dropdown",async({page})=>{
       break;
     }
   }
-  await page.waitForTimeout(2000);
+  
 })
 
 test("simple Alert dialog",async({page})=>{
@@ -228,7 +228,7 @@ test('prompt dialog' ,async({page})=> {
      await dialog.accept();
   });
   await page.locator("#alertbtn").click();
-  await page.waitForTimeout(2000);
+  
 })
 
 test('frame',async({page})=>{
@@ -335,7 +335,7 @@ test('checkbox pagination webtable',async({page})=>{
 
      }
 
-     await page.waitForTimeout(5000);
+     
 })
 
 test('Dynamic web table',async({page})=>{
@@ -384,7 +384,7 @@ test("calendar ",async({page})=>{
      await page.locator("svg[data-testid='svg-img-right']").first().click();
      await page.waitForTimeout(500);
    }
-  await page.waitForTimeout(5000);
+  
 })
 
 test("Easy my trip calendar ",async({page})=>{
@@ -467,7 +467,7 @@ test("Easy my trip calendar ",async({page})=>{
       console.log('Date selected:', rexpectedDay, rexpectedMonthYear);
     }
    }
-await page.waitForTimeout(10000);
+
 })
 
 test("Spice jet web calendar ",async({page})=>{
@@ -523,7 +523,7 @@ test("Spice jet web calendar ",async({page})=>{
        await nextButton.dispatchEvent('click');
        await page.waitForTimeout(100);
       }
-      await page.waitForTimeout(1000);
+      
 
     })
 

@@ -23,8 +23,10 @@ test("second test",async({browser})=>{
    await page.locator("#rtrip").click();
    await page.locator("#frmcity").click();
    await page.locator("#a_FromSector_show").pressSequentially("America ");
-   await page.waitForSelector('div[id="fromautoFill"] ul li');
-   const allOptions=page.locator('div[id="fromautoFill"] ul li');
+//    await page.waitForSelector('div[id="fromautoFill"] ul li');
+//    const allOptions=page.locator('div[id="fromautoFill"] ul li');
+   const allOptions = page.locator('div[id="fromautoFill"] ul li');
+   await allOptions.first().waitFor({ state: "visible" });
    console.log("Total counts :"+await allOptions.count());
    for(let i=0;i<await allOptions.count();i++){
       const option=((await allOptions.nth(i).innerText())).trim();
@@ -33,9 +35,12 @@ test("second test",async({browser})=>{
             await allOptions.nth(i).click();
             break;
    }}
-   await page.locator("#a_Editbox13_show").pressSequentially("Delhi ");
-   await page.waitForSelector('div[id="toautoFill"] ul li');
-   const allOptions2=page.locator('div[id="toautoFill"] ul li');
+   await page.locator("#a_Editbox13_show").pressSequentially("Delhi");
+//    await page.waitForSelector('div[id="toautoFill"] ul li');
+//    const allOptions2=page.locator('div[id="toautoFill"] ul li');
+  await page.waitForSelector('div[id="toautoFill"] ul li');
+
+const allOptions2 = page.locator('div[id="toautoFill"] ul li');
    console.log("Total counts :"+await allOptions2.count());
    for(let i=0;i<await allOptions2.count();i++){
       const option2=((await allOptions2.nth(i).innerText())).trim();

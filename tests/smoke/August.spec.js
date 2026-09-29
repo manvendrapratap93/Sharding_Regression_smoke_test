@@ -2,7 +2,7 @@ const{test,expect}=require('@playwright/test')
 
 test(" first test",async({page})=>{
      await page.goto("https://www.google.com/");
-     await page.locator("#APjFqb").fill("playwright");
+     await page.locator("#APjFqb").fill("playwright").waitFor();
      await page.waitForSelector("ul[jsname='bw4e9b'] li");
      const allcounts=await page.locator("ul[jsname='bw4e9b'] li");
      console.log("Total counts :"+await allcounts.count());
@@ -33,14 +33,14 @@ test("second test",async({browser})=>{
             await allOptions.nth(i).click();
             break;
    }}
-   await page.locator("#a_Editbox13_show").pressSequentially("Iraq");
+   await page.locator("#a_Editbox13_show").pressSequentially("India");
    await page.waitForSelector('div[id="toautoFill"] ul li');
    const allOptions2=page.locator('div[id="toautoFill"] ul li');
    console.log("Total counts :"+await allOptions2.count());
    for(let i=0;i<await allOptions2.count();i++){
       const option2=((await allOptions2.nth(i).innerText())).trim();
       console.log(option2);
-        if(option2.includes("Al-Ashraf Intl Airport")){
+        if(option2.includes("Delhi")){
             await allOptions2.nth(i).click();
             break;
         }
